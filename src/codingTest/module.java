@@ -5,11 +5,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -27,7 +30,7 @@ class Card{
 public class module {
 	
 	public static void main(String[] args) {
-		//¹®Á¦Ç®ÀÌ ±âº» ¾ç½Ä
+		//ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½
 		Solution s = new Solution();
 		String[] answer = {};
 		
@@ -107,14 +110,14 @@ public class module {
 		
 		
 		//array
-		int[] arr = new int [1];  //length¸¦ ÇÊÈ÷ ³Ö¾îÇá ÇÑ´Ù. 
-		String[] n = new String [1]; //¸¶Âù°¡Áö
+		int[] arr = new int [1];  //lengthï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½. 
+		String[] n = new String [1]; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 
-		Arrays.sort(arr);					//Array Á¤·Ä (¿À¸§Â÷¼ø)
+		Arrays.sort(arr);					//Array ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 		Arrays.stream(arr).sum();			//Array sum (int)
 		Arrays.stream(n).filter(s -> true); //Stream filter
-		//Stream filter Ã³¸® ÈÄ list º¯È¯
+		//Stream filter Ã³ï¿½ï¿½ ï¿½ï¿½ list ï¿½ï¿½È¯
 		//ArrayList<String[]> alreadyRankUser = (ArrayList<String[]>) rankList.stream().filter(t -> t[0].equals(userName) && Integer.parseInt(t[1]) >= userScore).collect(Collectors.toList());
 		
 		//===========================================================
@@ -137,7 +140,7 @@ public class module {
 		
 		//===========================================================
 		
-		//map ¼±¾ð
+		//map ï¿½ï¿½ï¿½ï¿½
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		
 		HashMap<String, List<String>> ma2 = new HashMap<String, List<String>>();
@@ -152,27 +155,27 @@ public class module {
 		
 		//Stack 
 		Stack <String> stack = new Stack();
-		stack.add(null);	//³Ö±â
-		stack.empty();		//ºñ¾ú´ÂÁö È®ÀÎ
-		stack.peek();		//stack ÃÖ»ó´Ü °ª
-		stack.pop();		//stack »©±â
+		stack.add(null);	//ï¿½Ö±ï¿½
+		stack.empty();		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+		stack.peek();		//stack ï¿½Ö»ï¿½ï¿½ ï¿½ï¿½
+		stack.pop();		//stack ï¿½ï¿½ï¿½ï¿½
 		
 		//Queue
 		Queue <String> queue = new LinkedList<>();
-		queue.add(null);	//³Ö±â
-		queue.isEmpty();	//ºñ¾ú´ÂÁö È®ÀÎ
-		queue.peek();		//queue ³ª¿Ã °ª
-		queue.poll();		//queue »©±â
+		queue.add(null);	//ï¿½Ö±ï¿½
+		queue.isEmpty();	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+		queue.peek();		//queue ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		queue.poll();		//queue ï¿½ï¿½ï¿½ï¿½
 		
 		
-		//±âÅ¸
-		//int[] ¸¦ integer[]·Î ¹Ù²Ù´Â ¹æ¹ý
+		//ï¿½ï¿½Å¸
+		//int[] ï¿½ï¿½ integer[]ï¿½ï¿½ ï¿½Ù²Ù´ï¿½ ï¿½ï¿½ï¿½
 		Integer[] arr2 = Arrays.stream( arr ).boxed().toArray( Integer[]::new );
 		
-		//forEach ±¸¹®
+		//forEach ï¿½ï¿½ï¿½ï¿½
 		Arrays.stream(arr).forEach(s -> System.out.println(s));
 		
-		//ÇÑ±ÛÀÚ¾¿ split -- ÆÄ¶ó¹ÌÅÍ ""·Î
+		//ï¿½Ñ±ï¿½ï¿½Ú¾ï¿½ split -- ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ ""ï¿½ï¿½
 		String str = "12345";
 		String[] result = str.split("");
 		
@@ -180,14 +183,14 @@ public class module {
 		Arrays.binarySearch(result, "1");
 		PriorityQueue<Integer> q = new PriorityQueue<Integer>();
 
-		//Á¤·Ä
+		//ï¿½ï¿½ï¿½ï¿½
 		/*
 		String[] result = new String[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
 			result[i] = String.valueOf(numbers[i]);
 		}
 
-		// Á¤·Ä
+		// ï¿½ï¿½ï¿½ï¿½
 		Arrays.sort(result, new Comparator<String>() {
 
 			@Override
@@ -244,15 +247,15 @@ public class module {
         int mid;
      
         while(end - start >= 0) {
-            mid = (start + end) / 2;    //Áß¾Ó °ª
+            mid = (start + end) / 2;    //ï¿½ß¾ï¿½ ï¿½ï¿½
      
-            if (arr[mid] == key) {    //key°ªÀ» Ã£¾ÒÀ»¶§
+            if (arr[mid] == key) {    //keyï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 return true;
      
-            } else if (arr[mid] > key) {   //key°ªÀÌ midÀÇ °ªº¸´Ù ÀÛÀ»¶§ (¿ÞÂÊÀ¸·Î)
+            } else if (arr[mid] > key) {   //keyï¿½ï¿½ï¿½ï¿½ midï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
                 end = mid - 1;
      
-            } else {  //key°ªÀÌ midÀÇ °ªº¸´Ù Å¬¶§ (¿À¸¥ÂÊÀ¸·Î)
+            } else {  //keyï¿½ï¿½ï¿½ï¿½ midï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
                 start = mid + 1;
      
             }
@@ -272,7 +275,7 @@ class Solution {
 	/**
 	 * 
 	 * @author hs
-	 * @½ºÅÃ - ÁÖ½Ä °¡°Ý......  ¾ê Àß ¸ð¸£°Ù´Ù
+	 * @ï¿½ï¿½ï¿½ï¿½ - ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½......  ï¿½ï¿½ ï¿½ï¿½ ï¿½ð¸£°Ù´ï¿½
 	 *
 	 */
 	public int[] solution1(int[] prices) {
@@ -388,16 +391,16 @@ class Solution {
         	String[] messageContent = str.split(" ");
         	String postFix = "";
             if(messageContent[0].equals("Leave")){                
-                postFix = "³ª°¬½À´Ï´Ù.";
+                postFix = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
             } else if(messageContent[0].equals("Change")) {
                 uidMap.replace(messageContent[1], messageContent[2]);
             } else {
-                postFix = "µé¾î¿Ô½À´Ï´Ù.";
+                postFix = "ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ï´ï¿½.";
                 uidMap.put(messageContent[1], messageContent[2]);
             }
             
         	if(!messageContent[0].equals("Change")) {
-        		answerStream += messageContent[1]+"´ÔÀÌ "+ postFix + ", ";
+        		answerStream += messageContent[1]+"ï¿½ï¿½ï¿½ï¿½ "+ postFix + ", ";
         	}
         }
         
@@ -553,19 +556,19 @@ class Solution {
 			rankList.add(new String[] {" ","0"});
 		}
 		
-		//K´Â 1ÀÌ»ó 100ÀÌÇÏÀÎ ÀÚ¿¬¼ö
-		//user_scoresÀÇ ±æÀÌ´Â 1 ÀÌ»ó 1000 ÀÌÇÏ
-		//user_scores -> ´Ð³×ÀÓ Á¡¼ö
-		//¹Ù²ï´Ù -> ´Ð³×ÀÓ
+		//Kï¿½ï¿½ 1ï¿½Ì»ï¿½ 100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½
+		//user_scoresï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ 1 ï¿½Ì»ï¿½ 1000 ï¿½ï¿½ï¿½ï¿½
+		//user_scores -> ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		//ï¿½Ù²ï¿½ï¿½ -> ï¿½Ð³ï¿½ï¿½ï¿½
 		int z = 0;
 		for(String s : user_scores) {
-			//·©Å© Á¤º¸ º¯°æ Àü ½º³À¼¦
+			//ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			for(int i = 0; i < k; i++) {
 				String[] rankUser = rankList.get(i);
 				snapShot[i] = rankUser[0].toString();
 			}
 			
-			//ÀÐ¾îµéÀÎ À¯Àú Á¤º¸ ½ºÄµ
+			//ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Äµ
 			String[] user = s.split(" ");
 			String userName = user[0]; 
 			int userScore = Integer.parseInt(user[1]);			
@@ -579,7 +582,7 @@ class Solution {
 					
 					if(rankUserScore < userScore) {
 						
-						//·©Å©¿¡ ÀÌ¹Ì ÀÖ´Â °æ¿ì -> ±¸ ·©Å©¸¦ Áö¿öÁØ´Ù.
+						//ï¿½ï¿½Å©ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ -> ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 						boolean needRemove = false;
 						int removeIndex = -1;
 						for(int j = 0; j < k; j++) {
@@ -613,7 +616,7 @@ class Solution {
 
 			}
 			
-			//·©Å© Á¤º¸ º¯°æ Àü ½º³À¼¦
+			//ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			for(int i = 0; i < k; i++) {
 				String[] rankUser = rankList.get(i);
 				if(!snapShot[i].equals(rankUser[0].toString())) {
@@ -634,16 +637,16 @@ class Solution {
 		return answer;
 	}
 	
-	//Á¤·Ä
+	//ï¿½ï¿½ï¿½ï¿½
 	public String solution13(int[] numbers) {
 		
-		// ¼ýÀÚ¸¦ ¹®ÀÚ¿­·Î º¯È¯
+		// ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 		String[] result = new String[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
 			result[i] = String.valueOf(numbers[i]);
 		}
 
-		// Á¤·Ä
+		// ï¿½ï¿½ï¿½ï¿½
 		Arrays.sort(result, new Comparator<String>() {
 
 			@Override
@@ -653,13 +656,13 @@ class Solution {
 			}
 		});
 
-		// 0¸¸ ¿©·¯°³ ÀÖ´Â ¹è¿­ÀÇ °æ¿ì ÇÏ³ªÀÇ 0¸¸ ¸®ÅÏ
+		// 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(result[0].equals("0")) {
 			return "0";
 		}
 		
 		String answer = "";
-		// Á¤·ÄµÈ ¹®ÀÚ ÇÏ³ª·Î ÇÕÄ¡±â
+		// ï¿½ï¿½ï¿½Äµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½
 		for (String a : result) {
 			answer += a;
 		}
@@ -669,7 +672,7 @@ class Solution {
 	
 	public int solution14(int[] people, int limit) {
 		
-		//±¸¸íº¸Æ® ¾ÕµÚ·Î ÅÂ¿ì±â ----- Å½¿å¹ý
+		//ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ÕµÚ·ï¿½ ï¿½Â¿ï¿½ï¿½ ----- Å½ï¿½ï¿½ï¿½
 		int answer = 0;
 
         Arrays.sort(people);
@@ -787,8 +790,8 @@ class Solution {
 		HashMap<String, ArrayList<String>> resultMap = new HashMap<String, ArrayList<String>>();
 		
 		
-		//¿ì¼± ¼øÀ§ °í·Á
-		//1. È£¼ö filtering
+		//ï¿½ì¼± ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		//1. È£ï¿½ï¿½ filtering
 		int min = 99999;
 		PriorityQueue<String> pq = new PriorityQueue<String>(new Comparator<String>() {
 			@Override
@@ -852,6 +855,189 @@ class Solution {
 		
 		return answer;
 	}
+	
+	static String solution(String s) {
+		String answer = "";
+		
+		String[] list = s.split(" ",0);
+		
+		for(int i = 0; i < list.length; i++) {
+			list[i] = list[i].toLowerCase();
+			if(isStringInt(list[i].substring(0,1))) {
+				//do Nothing
+			} else {
+				list[i] = list[i].substring(0,1).toUpperCase() + list[i].substring(1);
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i = 0; i < list.length; i++) {
+			if(i != 0) {
+				sb.append(" "+list[i]);				
+			} else {
+				sb.append(list[i]);
+			}	
+		}
+		
+		
+		return answer;
+	}
+	
+	static boolean isStringInt(String a) {
+		try {
+			Integer.parseInt(a);
+			return true;
+		} catch (NumberFormatException ex) {
+			return false;
+		}
+	}
+	
+	static int solution03(int N, int number) {
+		
+		int answer = 0;
+		
+		List<Set<Integer>> listSet = new ArrayList<Set<Integer>>();
+		
+		for (int i = 0; i < 9; i++) {
+			listSet.add(new HashSet<Integer>());
+		}
+		
+		listSet.get(1).add(N);
+		
+		
+		for (int i = 2; i < 9; i++) {
+			Set<Integer> countSet = new HashSet<Integer>();
+			
+			for(int j = 1; j < 9; j++) {
+				Set<Integer> pre = listSet.get(j);
+				Set<Integer> post = listSet.get(i-j);
+				
+				for(Integer p : pre) {
+					for(Integer q : post) {
+						countSet.add(p+q);
+						countSet.add(p-q);
+						countSet.add(p*q);
+						if(p != 0 && q != 0) {
+							countSet.add(p/q);
+						}
+					}
+				}
+			}
+			countSet.add(Integer.parseInt(String.valueOf(N).repeat(i)));
+		}
+		
+		for(Set<Integer> sub : listSet){
+			if(sub.contains(number))
+				return listSet.indexOf(sub);
+		}
+		
+		return answer;
+	}
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/43105
+	static int solution04(int[][] triangle) {
+		int answer = 0;
+		
+		int[][] addedTriangle = new int[triangle.length][triangle.length];
+		
+		addedTriangle[0][0] = triangle[0][0];
+		
+		for(int i = 1 ; i < triangle.length; i++) {
+			for(int j = 0; j < triangle[i].length; j++) {
+				
+				if(j == 0) {
+					addedTriangle[i][j] = triangle[i][j] + addedTriangle[i-1][0];
+				} else if (j == triangle[i].length -1 ) {
+					addedTriangle[i][j] = triangle[i][j] + addedTriangle[i-1][j-1];
+				} else {
+					addedTriangle[i][j] = triangle[i][j] + Math.max(addedTriangle[i-1][j-1], addedTriangle[i-1][j]);
+				}
+			}
+		}
+		
+		int tmp = -1;
+		int lastLine = triangle.length-1;
+		for(int i = 0 ; i < triangle[lastLine].length; i++) {
+			if (tmp < addedTriangle[lastLine][i]) {
+				tmp = addedTriangle[lastLine][i];
+			}
+		}
+		
+		answer = tmp;
+		
+        return answer;
+	}
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42898
+	public int solution04(int m, int n, int[][] puddles) {
+        int answer = 0;
+        
+        int[][] countArr = new int[n][m];
+        
+        countArr[0][0] = 0;
+        
+        for(int[] list : puddles){
+            countArr[list[1]-1][list[0]-1] = -1;
+        }
+        
+        for(int i = 0; i < n ; i++){
+            for(int j = 0; j < m ; j++){
+            	if(countArr[i][j] == -1) {
+            		countArr[i][j] = 0;
+                    continue;
+            	} else {
+            		if( (i == 0 && j == 1) || (i == 1 && j == 0)) {
+            			countArr[i][j] = 1;
+            			continue;
+            		}
+            		
+            		if( i == 0 && j > 1) {
+            			countArr[i][j] = countArr[i][j-1];
+                        continue;
+            		}
+                    if( j == 0 && i > 1) {
+            			countArr[i][j] = countArr[i-1][j];
+                        continue;
+            		}
+                    if( j >= 1 && i >= 1) {
+                        // System.out.println("i : " + i + " j : " + j);
+                        // System.out.println(countArr[i-1][j] + " / " + countArr[i][j-1]);
+            			countArr[i][j] = (countArr[i-1][j] + countArr[i][j-1]) % 1000000007;    
+            		}
+            	}
+            }
+        }
+        
+        // for(int i = 0; i < n; i++) {
+        // 	for(int j = 0; j < m; j++) {
+        // 		System.out.print(countArr[i][j] + " ");
+        // 	}
+        // 	System.out.println();
+        // }
+        
+        return countArr[n-1][m-1] % 1000000007;
+    }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/49189
+	public int solution05(int n, int[][] edge) {
+        
+		int answer = 0;
+		int check[] = new int[n];
+		
+		List<List<Integer>> list = new ArrayList<>();
+		
+		list.add(new ArrayList<Integer>());
+		
+		for(int[] i : edge) {
+			list.get(i[0]).add(i[1]);
+		}
+		
+		Queue<Integer> q = new LinkedList<>();
+		
+		
+		
+        return answer;
+    }
 }
 
 
