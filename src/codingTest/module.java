@@ -30,7 +30,7 @@ class Card{
 public class module {
 	
 	public static void main(String[] args) {
-		//����Ǯ�� �⺻ ���
+		//占쏙옙占쏙옙풀占쏙옙 占썩본 占쏙옙占�
 		Solution s = new Solution();
 		String[] answer = {};
 		
@@ -110,14 +110,14 @@ public class module {
 		
 		
 		//array
-		int[] arr = new int [1];  //length�� ���� �־��� �Ѵ�. 
-		String[] n = new String [1]; //��������
+		int[] arr = new int [1];  //length占쏙옙 占쏙옙占쏙옙 占쌍억옙占쏙옙 占싼댐옙. 
+		String[] n = new String [1]; //占쏙옙占쏙옙占쏙옙占쏙옙
 		
 
-		Arrays.sort(arr);					//Array ���� (��������)
+		Arrays.sort(arr);					//Array 占쏙옙占쏙옙 (占쏙옙占쏙옙占쏙옙占쏙옙)
 		Arrays.stream(arr).sum();			//Array sum (int)
 		Arrays.stream(n).filter(s -> true); //Stream filter
-		//Stream filter ó�� �� list ��ȯ
+		//Stream filter 처占쏙옙 占쏙옙 list 占쏙옙환
 		//ArrayList<String[]> alreadyRankUser = (ArrayList<String[]>) rankList.stream().filter(t -> t[0].equals(userName) && Integer.parseInt(t[1]) >= userScore).collect(Collectors.toList());
 		
 		//===========================================================
@@ -140,7 +140,7 @@ public class module {
 		
 		//===========================================================
 		
-		//map ����
+		//map 占쏙옙占쏙옙
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		
 		HashMap<String, List<String>> ma2 = new HashMap<String, List<String>>();
@@ -155,27 +155,27 @@ public class module {
 		
 		//Stack 
 		Stack <String> stack = new Stack();
-		stack.add(null);	//�ֱ�
-		stack.empty();		//������� Ȯ��
-		stack.peek();		//stack �ֻ�� ��
-		stack.pop();		//stack ����
+		stack.add(null);	//占쌍깍옙
+		stack.empty();		//占쏙옙占쏙옙占쏙옙占� 확占쏙옙
+		stack.peek();		//stack 占쌍삼옙占� 占쏙옙
+		stack.pop();		//stack 占쏙옙占쏙옙
 		
 		//Queue
 		Queue <String> queue = new LinkedList<>();
-		queue.add(null);	//�ֱ�
-		queue.isEmpty();	//������� Ȯ��
-		queue.peek();		//queue ���� ��
-		queue.poll();		//queue ����
+		queue.add(null);	//占쌍깍옙
+		queue.isEmpty();	//占쏙옙占쏙옙占쏙옙占� 확占쏙옙
+		queue.peek();		//queue 占쏙옙占쏙옙 占쏙옙
+		queue.poll();		//queue 占쏙옙占쏙옙
 		
 		
-		//��Ÿ
-		//int[] �� integer[]�� �ٲٴ� ���
+		//占쏙옙타
+		//int[] 占쏙옙 integer[]占쏙옙 占쌕꾸댐옙 占쏙옙占�
 		Integer[] arr2 = Arrays.stream( arr ).boxed().toArray( Integer[]::new );
 		
-		//forEach ����
+		//forEach 占쏙옙占쏙옙
 		Arrays.stream(arr).forEach(s -> System.out.println(s));
 		
-		//�ѱ��ھ� split -- �Ķ���� ""��
+		//占싼깍옙占쌘억옙 split -- 占식띰옙占쏙옙占� ""占쏙옙
 		String str = "12345";
 		String[] result = str.split("");
 		
@@ -183,14 +183,14 @@ public class module {
 		Arrays.binarySearch(result, "1");
 		PriorityQueue<Integer> q = new PriorityQueue<Integer>();
 
-		//����
+		//占쏙옙占쏙옙
 		/*
 		String[] result = new String[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
 			result[i] = String.valueOf(numbers[i]);
 		}
 
-		// ����
+		// 占쏙옙占쏙옙
 		Arrays.sort(result, new Comparator<String>() {
 
 			@Override
@@ -247,15 +247,15 @@ public class module {
         int mid;
      
         while(end - start >= 0) {
-            mid = (start + end) / 2;    //�߾� ��
+            mid = (start + end) / 2;    //占쌩억옙 占쏙옙
      
-            if (arr[mid] == key) {    //key���� ã������
+            if (arr[mid] == key) {    //key占쏙옙占쏙옙 찾占쏙옙占쏙옙占쏙옙
                 return true;
      
-            } else if (arr[mid] > key) {   //key���� mid�� ������ ������ (��������)
+            } else if (arr[mid] > key) {   //key占쏙옙占쏙옙 mid占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 (占쏙옙占쏙옙占쏙옙占쏙옙)
                 end = mid - 1;
      
-            } else {  //key���� mid�� ������ Ŭ�� (����������)
+            } else {  //key占쏙옙占쏙옙 mid占쏙옙 占쏙옙占쏙옙占쏙옙 클占쏙옙 (占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙)
                 start = mid + 1;
      
             }
@@ -275,7 +275,7 @@ class Solution {
 	/**
 	 * 
 	 * @author hs
-	 * @���� - �ֽ� ����......  �� �� �𸣰ٴ�
+	 * @占쏙옙占쏙옙 - 占쌍쏙옙 占쏙옙占쏙옙......  占쏙옙 占쏙옙 占쏜르겟댐옙
 	 *
 	 */
 	public int[] solution1(int[] prices) {
@@ -391,16 +391,16 @@ class Solution {
         	String[] messageContent = str.split(" ");
         	String postFix = "";
             if(messageContent[0].equals("Leave")){                
-                postFix = "�������ϴ�.";
+                postFix = "占쏙옙占쏙옙占쏙옙占싹댐옙.";
             } else if(messageContent[0].equals("Change")) {
                 uidMap.replace(messageContent[1], messageContent[2]);
             } else {
-                postFix = "���Խ��ϴ�.";
+                postFix = "占쏙옙占쌉쏙옙占싹댐옙.";
                 uidMap.put(messageContent[1], messageContent[2]);
             }
             
         	if(!messageContent[0].equals("Change")) {
-        		answerStream += messageContent[1]+"���� "+ postFix + ", ";
+        		answerStream += messageContent[1]+"占쏙옙占쏙옙 "+ postFix + ", ";
         	}
         }
         
@@ -556,19 +556,19 @@ class Solution {
 			rankList.add(new String[] {" ","0"});
 		}
 		
-		//K�� 1�̻� 100������ �ڿ���
-		//user_scores�� ���̴� 1 �̻� 1000 ����
-		//user_scores -> �г��� ����
-		//�ٲ�� -> �г���
+		//K占쏙옙 1占싱삼옙 100占쏙옙占쏙옙占쏙옙 占쌘울옙占쏙옙
+		//user_scores占쏙옙 占쏙옙占싱댐옙 1 占싱삼옙 1000 占쏙옙占쏙옙
+		//user_scores -> 占싻놂옙占쏙옙 占쏙옙占쏙옙
+		//占쌕뀐옙占� -> 占싻놂옙占쏙옙
 		int z = 0;
 		for(String s : user_scores) {
-			//��ũ ���� ���� �� ������
+			//占쏙옙크 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙占쏙옙
 			for(int i = 0; i < k; i++) {
 				String[] rankUser = rankList.get(i);
 				snapShot[i] = rankUser[0].toString();
 			}
 			
-			//�о���� ���� ���� ��ĵ
+			//占싻억옙占쏙옙占� 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙캔
 			String[] user = s.split(" ");
 			String userName = user[0]; 
 			int userScore = Integer.parseInt(user[1]);			
@@ -582,7 +582,7 @@ class Solution {
 					
 					if(rankUserScore < userScore) {
 						
-						//��ũ�� �̹� �ִ� ��� -> �� ��ũ�� �����ش�.
+						//占쏙옙크占쏙옙 占싱뱄옙 占쌍댐옙 占쏙옙占� -> 占쏙옙 占쏙옙크占쏙옙 占쏙옙占쏙옙占쌔댐옙.
 						boolean needRemove = false;
 						int removeIndex = -1;
 						for(int j = 0; j < k; j++) {
@@ -616,7 +616,7 @@ class Solution {
 
 			}
 			
-			//��ũ ���� ���� �� ������
+			//占쏙옙크 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙占쏙옙
 			for(int i = 0; i < k; i++) {
 				String[] rankUser = rankList.get(i);
 				if(!snapShot[i].equals(rankUser[0].toString())) {
@@ -637,16 +637,16 @@ class Solution {
 		return answer;
 	}
 	
-	//����
+	//占쏙옙占쏙옙
 	public String solution13(int[] numbers) {
 		
-		// ���ڸ� ���ڿ��� ��ȯ
+		// 占쏙옙占쌘몌옙 占쏙옙占쌘울옙占쏙옙 占쏙옙환
 		String[] result = new String[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
 			result[i] = String.valueOf(numbers[i]);
 		}
 
-		// ����
+		// 占쏙옙占쏙옙
 		Arrays.sort(result, new Comparator<String>() {
 
 			@Override
@@ -656,13 +656,13 @@ class Solution {
 			}
 		});
 
-		// 0�� ������ �ִ� �迭�� ��� �ϳ��� 0�� ����
+		// 0占쏙옙 占쏙옙占쏙옙占쏙옙 占쌍댐옙 占썼열占쏙옙 占쏙옙占� 占싹놂옙占쏙옙 0占쏙옙 占쏙옙占쏙옙
 		if(result[0].equals("0")) {
 			return "0";
 		}
 		
 		String answer = "";
-		// ���ĵ� ���� �ϳ��� ��ġ��
+		// 占쏙옙占식듸옙 占쏙옙占쏙옙 占싹놂옙占쏙옙 占쏙옙치占쏙옙
 		for (String a : result) {
 			answer += a;
 		}
@@ -672,7 +672,7 @@ class Solution {
 	
 	public int solution14(int[] people, int limit) {
 		
-		//����Ʈ �յڷ� �¿�� ----- Ž���
+		//占쏙옙占쏙옙트 占쌌뒤뤄옙 占승울옙占� ----- 탐占쏙옙占�
 		int answer = 0;
 
         Arrays.sort(people);
@@ -790,8 +790,8 @@ class Solution {
 		HashMap<String, ArrayList<String>> resultMap = new HashMap<String, ArrayList<String>>();
 		
 		
-		//�켱 ���� ���
-		//1. ȣ�� filtering
+		//占쎌선 占쏙옙占쏙옙 占쏙옙占�
+		//1. 호占쏙옙 filtering
 		int min = 99999;
 		PriorityQueue<String> pq = new PriorityQueue<String>(new Comparator<String>() {
 			@Override
@@ -1036,6 +1036,32 @@ class Solution {
 		
 		
 		
+        return answer;
+    }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/43238
+	public long solution(int n, int[] times) {
+		
+        long answer = 0;
+        
+        Arrays.sort(times);
+        
+        int[] copyTimes = new int[times.length];
+        
+        copyTimes = Arrays.copyOf(times, times.length);
+        
+        
+        int[] manTimes = new int[n];
+        
+        for(int i = 0; i < n; i++) {
+        	
+        	
+        	manTimes[i] = Arrays.
+        }
+        
+        
+        
+        
         return answer;
     }
 }
