@@ -42,7 +42,9 @@ public class module {
 		String[] rooms= {"[1234]None,Of,People,Here", "[5678]Wow"};
 		int target = 1234;
 		      
-		System.out.println(s.solution01(rooms, target));
+//		System.out.println(s.solution11(new String[] {"I 16","D 1"}));
+//		System.out.println(s.solution11(new String[] {"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"}));
+		System.out.println(s.solution13(12,6));
 		
 //		answer = s.solution("JEROEN");
 //		System.out.println(" answer : " + answer);
@@ -1130,6 +1132,174 @@ class Solution {
 
         return ans;
     }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42627
+	public int solution10(int[][] jobs) {
+        int answer = 0;
+        
+        Arrays.sort(jobs, (o1, o2) -> o1[0] - o2[0]);
+        
+        PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
+        
+        int jobsIdx = 0;
+        int count =0;
+        int end = 0;
+        
+        while(count < jobs.length) {
+        	while(jobsIdx < jobs.length && jobs[jobsIdx][0] <= end) {
+        		System.out.println(jobs[jobsIdx][0] + " " + jobs[jobsIdx][1]);
+        		
+        		pq.add(jobs[jobsIdx++]);
+        	}
+        	
+        	if(pq.isEmpty()) {
+        		end = jobs[jobsIdx][0];
+        	} else {
+        		int[] temp = pq.poll();
+        		answer += temp[1] + end - temp[0];
+        		end += temp[1];
+        		count++;
+        	}
+        }
+        
+        return (int) Math.floor(answer / jobs.length);
+        
+    }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42628
+	public int[] solution11(String[] operations) {
+        int[] answer = new int[2];
+        
+        PriorityQueue<Integer> maxPq = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> minPq = new PriorityQueue<>();
+        
+        List<Integer> addedList = new ArrayList<Integer>();
+        List<Integer> removedList = new ArrayList<Integer>();
+        
+        int maxDelCount = 0;
+        int minDelCount = 0;
+        
+        for(String s : operations) {
+        	System.out.println(s);
+        	
+        	String order = s.split(" ")[0];
+        	int val = Integer.parseInt(s.split(" ")[1]);
+        	
+        	if(order.equals("I")) {
+        		System.out.println("Insert => " + s.split(" ")[1]);
+        		
+        		addedList.add(Integer.parseInt(s.split(" ")[1]));
+        		maxPq.add(val);
+        		minPq.add(val);
+        		
+        	} else if (order.equals("D") && val == 1) {
+        		System.out.println("Delete Max => " + maxPq.peek());
+        		if(!maxPq.isEmpty()) {
+        			minPq.remove((maxPq.poll()));
+        			
+        		}
+        		
+        	} else if (order.equals("D") && val == -1) {
+        		System.out.println("Delete Min =>" + minPq.peek());
+        		if(!minPq.isEmpty()) {
+        			maxPq.remove(minPq.poll());
+        		}
+        	}
+        }
+        
+        
+        answer[0] = maxPq.isEmpty() ? 0 : maxPq.peek();
+        answer[1] = minPq.isEmpty() ? 0 : minPq.peek();
+        
+        return answer;
+    }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42840
+	public int	[] solution12(int[] answers) {
+        int[] answer = {};
+        
+        int[] person1 = new int[] {1,2,3,4,5};
+        int[] person2 = new int[] {2,1,2,3,2,4,2,5};
+        int[] person3 = new int[] {3,3,1,1,2,2,4,4,5,5};
+        
+        int correct1 = 0;
+        int correct2 = 0;
+        int correct3 = 0;
+        
+        for(int i = 0; i < answers.length; i++) {
+        	if(answers[i] == person1[i % (person1.length)]) {
+        		correct1++;
+        	}
+        	if(answers[i] == person2[i % (person2.length)]) {
+        		correct2++;
+        	}
+        	if(answers[i] == person3[i % (person3.length)]) {
+        		correct3++;
+        	}
+        }
+        
+        int max = Math.max(correct1, correct2);
+        max = Math.max(max, correct3);
+        List<Integer> list = new ArrayList<Integer>();
+        
+        if(correct1 == max) {
+        	list.add(1);
+        }
+        if(correct2 == max) {
+        	list.add(2);
+        }
+        if(correct3 == max) {
+        	list.add(3);
+        }
+        
+        list.sort((o1, o2) -> o1.compareTo(o2));
+        
+        answer = list.stream().mapToInt(i->i).toArray();
+        
+        System.out.println(correct1);
+        System.out.println(correct2);
+        System.out.println(correct3);
+        
+        Arrays.stream(answer).forEach(s->System.out.println(s));
+        
+        return answer;
+    }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42842
+	public int[] solution13(int brown, int yellow) {
+        int[] answer = new int[2];
+        
+        List<Integer> arr = new ArrayList<Integer>();
+        int n = yellow;
+        int sqrt = (int) Math.sqrt(n);
+        
+        for(int i = 1; i<= sqrt; i++) {
+        	if( n % 1 == 0) {
+        		arr.add(i);
+        		if(n / i != i) {
+        			arr.add(n / i);
+        		}
+        		
+        	}
+        }
+        
+        arr.sort(Comparator.naturalOrder());
+        
+        for(int i : arr) {
+        	int vertical = i; 
+        	int horizontal = yellow / i;
+        	
+        	if(yellow%vertical == 0 && brown == ((int)vertical+2) * ((int)horizontal+2) - yellow) {
+        		answer[0] = horizontal+2;
+        		answer[1] = vertical+2;
+        		break;
+        	}
+        	
+        }
+        
+        return answer;
+    }
+	
 }
 
 
