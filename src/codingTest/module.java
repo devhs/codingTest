@@ -1,5 +1,6 @@
 package codingTest;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,7 +31,8 @@ class Card{
 public class module {
 	
 	public static void main(String[] args) {
-		//占쏙옙占쏙옙풀占쏙옙 占썩본 占쏙옙占�
+		
+		//문제풀이 기본 양식
 		Solution s = new Solution();
 		String[] answer = {};
 		
@@ -110,14 +112,14 @@ public class module {
 		
 		
 		//array
-		int[] arr = new int [1];  //length占쏙옙 占쏙옙占쏙옙 占쌍억옙占쏙옙 占싼댐옙. 
-		String[] n = new String [1]; //占쏙옙占쏙옙占쏙옙占쏙옙
+		int[] arr = new int [1];  //length를 필히 넣어햐 한다. 
+		String[] n = new String [1]; //마찬가지
 		
 
-		Arrays.sort(arr);					//Array 占쏙옙占쏙옙 (占쏙옙占쏙옙占쏙옙占쏙옙)
+		Arrays.sort(arr);					//Array 정렬 (오름차순)
 		Arrays.stream(arr).sum();			//Array sum (int)
 		Arrays.stream(n).filter(s -> true); //Stream filter
-		//Stream filter 처占쏙옙 占쏙옙 list 占쏙옙환
+		//Stream filter 처리 후 list 변환
 		//ArrayList<String[]> alreadyRankUser = (ArrayList<String[]>) rankList.stream().filter(t -> t[0].equals(userName) && Integer.parseInt(t[1]) >= userScore).collect(Collectors.toList());
 		
 		//===========================================================
@@ -140,7 +142,7 @@ public class module {
 		
 		//===========================================================
 		
-		//map 占쏙옙占쏙옙
+		//map 선언
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		
 		HashMap<String, List<String>> ma2 = new HashMap<String, List<String>>();
@@ -155,27 +157,27 @@ public class module {
 		
 		//Stack 
 		Stack <String> stack = new Stack();
-		stack.add(null);	//占쌍깍옙
-		stack.empty();		//占쏙옙占쏙옙占쏙옙占� 확占쏙옙
-		stack.peek();		//stack 占쌍삼옙占� 占쏙옙
-		stack.pop();		//stack 占쏙옙占쏙옙
+		stack.add(null);	//넣기
+		stack.empty();		//비었는지 확인
+		stack.peek();		//stack 최상단 값
+		stack.pop();		//stack 빼기
 		
 		//Queue
 		Queue <String> queue = new LinkedList<>();
-		queue.add(null);	//占쌍깍옙
-		queue.isEmpty();	//占쏙옙占쏙옙占쏙옙占� 확占쏙옙
-		queue.peek();		//queue 占쏙옙占쏙옙 占쏙옙
-		queue.poll();		//queue 占쏙옙占쏙옙
+		queue.add(null);	//넣기
+		queue.isEmpty();	//비었는지 확인
+		queue.peek();		//queue 나올 값
+		queue.poll();		//queue 빼기
 		
 		
-		//占쏙옙타
-		//int[] 占쏙옙 integer[]占쏙옙 占쌕꾸댐옙 占쏙옙占�
+		//기타
+		//int[] 를 integer[]로 바꾸는 방법
 		Integer[] arr2 = Arrays.stream( arr ).boxed().toArray( Integer[]::new );
 		
-		//forEach 占쏙옙占쏙옙
+		//forEach 구문
 		Arrays.stream(arr).forEach(s -> System.out.println(s));
 		
-		//占싼깍옙占쌘억옙 split -- 占식띰옙占쏙옙占� ""占쏙옙
+		//한글자씩 split -- 파라미터 ""로
 		String str = "12345";
 		String[] result = str.split("");
 		
@@ -183,19 +185,16 @@ public class module {
 		Arrays.binarySearch(result, "1");
 		PriorityQueue<Integer> q = new PriorityQueue<Integer>();
 
-		//占쏙옙占쏙옙
+		//정렬
 		/*
 		String[] result = new String[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
 			result[i] = String.valueOf(numbers[i]);
 		}
-
-		// 占쏙옙占쏙옙
+		// 정렬
 		Arrays.sort(result, new Comparator<String>() {
-
 			@Override
 			public int compare(String o1, String o2) {
-
 				return ((o2 + o1).compareTo(o1 + o2));
 			}
 		});
@@ -247,15 +246,15 @@ public class module {
         int mid;
      
         while(end - start >= 0) {
-            mid = (start + end) / 2;    //占쌩억옙 占쏙옙
+            mid = (start + end) / 2;    //중앙 값
      
-            if (arr[mid] == key) {    //key占쏙옙占쏙옙 찾占쏙옙占쏙옙占쏙옙
+            if (arr[mid] == key) {    //key값을 찾았을때
                 return true;
      
-            } else if (arr[mid] > key) {   //key占쏙옙占쏙옙 mid占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 (占쏙옙占쏙옙占쏙옙占쏙옙)
+            } else if (arr[mid] > key) {   //key값이 mid의 값보다 작을때 (왼쪽으로)
                 end = mid - 1;
      
-            } else {  //key占쏙옙占쏙옙 mid占쏙옙 占쏙옙占쏙옙占쏙옙 클占쏙옙 (占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙)
+            } else {  //key값이 mid의 값보다 클때 (오른쪽으로)
                 start = mid + 1;
      
             }
@@ -275,7 +274,7 @@ class Solution {
 	/**
 	 * 
 	 * @author hs
-	 * @占쏙옙占쏙옙 - 占쌍쏙옙 占쏙옙占쏙옙......  占쏙옙 占쏙옙 占쏜르겟댐옙
+	 * @스택 - 주식 가격......  얘 잘 모르겟다
 	 *
 	 */
 	public int[] solution1(int[] prices) {
@@ -391,16 +390,16 @@ class Solution {
         	String[] messageContent = str.split(" ");
         	String postFix = "";
             if(messageContent[0].equals("Leave")){                
-                postFix = "占쏙옙占쏙옙占쏙옙占싹댐옙.";
+                postFix = "나갔습니다.";
             } else if(messageContent[0].equals("Change")) {
                 uidMap.replace(messageContent[1], messageContent[2]);
             } else {
-                postFix = "占쏙옙占쌉쏙옙占싹댐옙.";
+                postFix = "들어왔습니다.";
                 uidMap.put(messageContent[1], messageContent[2]);
             }
             
         	if(!messageContent[0].equals("Change")) {
-        		answerStream += messageContent[1]+"占쏙옙占쏙옙 "+ postFix + ", ";
+        		answerStream += messageContent[1]+"님이 "+ postFix + ", ";
         	}
         }
         
@@ -556,19 +555,19 @@ class Solution {
 			rankList.add(new String[] {" ","0"});
 		}
 		
-		//K占쏙옙 1占싱삼옙 100占쏙옙占쏙옙占쏙옙 占쌘울옙占쏙옙
-		//user_scores占쏙옙 占쏙옙占싱댐옙 1 占싱삼옙 1000 占쏙옙占쏙옙
-		//user_scores -> 占싻놂옙占쏙옙 占쏙옙占쏙옙
-		//占쌕뀐옙占� -> 占싻놂옙占쏙옙
+		//K는 1이상 100이하인 자연수
+		//user_scores의 길이는 1 이상 1000 이하
+		//user_scores -> 닉네임 점수
+		//바뀐다 -> 닉네임
 		int z = 0;
 		for(String s : user_scores) {
-			//占쏙옙크 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙占쏙옙
+			//랭크 정보 변경 전 스냅샷
 			for(int i = 0; i < k; i++) {
 				String[] rankUser = rankList.get(i);
 				snapShot[i] = rankUser[0].toString();
 			}
 			
-			//占싻억옙占쏙옙占� 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙캔
+			//읽어들인 유저 정보 스캔
 			String[] user = s.split(" ");
 			String userName = user[0]; 
 			int userScore = Integer.parseInt(user[1]);			
@@ -582,7 +581,7 @@ class Solution {
 					
 					if(rankUserScore < userScore) {
 						
-						//占쏙옙크占쏙옙 占싱뱄옙 占쌍댐옙 占쏙옙占� -> 占쏙옙 占쏙옙크占쏙옙 占쏙옙占쏙옙占쌔댐옙.
+						//랭크에 이미 있는 경우 -> 구 랭크를 지워준다.
 						boolean needRemove = false;
 						int removeIndex = -1;
 						for(int j = 0; j < k; j++) {
@@ -616,7 +615,7 @@ class Solution {
 
 			}
 			
-			//占쏙옙크 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙占쏙옙
+			//랭크 정보 변경 전 스냅샷
 			for(int i = 0; i < k; i++) {
 				String[] rankUser = rankList.get(i);
 				if(!snapShot[i].equals(rankUser[0].toString())) {
@@ -637,16 +636,16 @@ class Solution {
 		return answer;
 	}
 	
-	//占쏙옙占쏙옙
+	//정렬
 	public String solution13(int[] numbers) {
 		
-		// 占쏙옙占쌘몌옙 占쏙옙占쌘울옙占쏙옙 占쏙옙환
+		// 숫자를 문자열로 변환
 		String[] result = new String[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
 			result[i] = String.valueOf(numbers[i]);
 		}
 
-		// 占쏙옙占쏙옙
+		// 정렬
 		Arrays.sort(result, new Comparator<String>() {
 
 			@Override
@@ -656,13 +655,13 @@ class Solution {
 			}
 		});
 
-		// 0占쏙옙 占쏙옙占쏙옙占쏙옙 占쌍댐옙 占썼열占쏙옙 占쏙옙占� 占싹놂옙占쏙옙 0占쏙옙 占쏙옙占쏙옙
+		// 0만 여러개 있는 배열의 경우 하나의 0만 리턴
 		if(result[0].equals("0")) {
 			return "0";
 		}
 		
 		String answer = "";
-		// 占쏙옙占식듸옙 占쏙옙占쏙옙 占싹놂옙占쏙옙 占쏙옙치占쏙옙
+		// 정렬된 문자 하나로 합치기
 		for (String a : result) {
 			answer += a;
 		}
@@ -672,7 +671,7 @@ class Solution {
 	
 	public int solution14(int[] people, int limit) {
 		
-		//占쏙옙占쏙옙트 占쌌뒤뤄옙 占승울옙占� ----- 탐占쏙옙占�
+		//구명보트 앞뒤로 태우기 ----- 탐욕법
 		int answer = 0;
 
         Arrays.sort(people);
@@ -790,8 +789,8 @@ class Solution {
 		HashMap<String, ArrayList<String>> resultMap = new HashMap<String, ArrayList<String>>();
 		
 		
-		//占쎌선 占쏙옙占쏙옙 占쏙옙占�
-		//1. 호占쏙옙 filtering
+		//우선 순위 고려
+		//1. 호수 filtering
 		int min = 99999;
 		PriorityQueue<String> pq = new PriorityQueue<String>(new Comparator<String>() {
 			@Override
@@ -1040,29 +1039,96 @@ class Solution {
     }
 	
 	//@Link : https://programmers.co.kr/learn/courses/30/lessons/43238
-	public long solution(int n, int[] times) {
+	public long solution06(int n, int[] times) {
 		
-        long answer = 0;
+		long answer = Long.MAX_VALUE;
         
         Arrays.sort(times);
         
-        int[] copyTimes = new int[times.length];
+        long start = times[0];  // 1분 부터
+        long end = (long)times[times.length-1]*(long)n;     //times에는 심사대 마다 걸리는 시간이 걸려있으니 최대시간 = 가장오래걸리는시간 * 인원수
         
-        copyTimes = Arrays.copyOf(times, times.length);
-        
-        
-        int[] manTimes = new int[n];
-        
-        for(int i = 0; i < n; i++) {
-        	
-        	
-        	manTimes[i] = Arrays.
+        long mid ;
+        long sum = 0;
+        while(start<=end) {
+            mid=  (start+end)/2;
+            sum = 0;
+            for(int time : times) {
+                sum+= mid/time;
+            }
+            
+            if(sum>=n) {
+                answer = Math.min(answer, mid);
+                end = mid-1;
+            }
+            else {
+                start = mid+1;
+            }
         }
-        
-        
-        
-        
         return answer;
+    }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42860
+	public int solution07(String name) {
+		int answer = 0;
+        int length = name.length();
+
+        int index; // 다음 값들을 확인할 때 사용
+        int move = length - 1; // 좌우 움직임 수를 체크
+
+        for(int i = 0; i < name.length(); i++){
+            answer += Math.min(name.charAt(i) - 'A', 'Z' - name.charAt(i) + 1);
+
+            index = i + 1;
+            // 연속되는 A 갯수 확인
+            while(index < length && name.charAt(index) == 'A'){
+                index++;
+            }
+
+            move = Math.min(move, i * 2 + length - index);
+
+            move = Math.min(move, (length - index) * 2 + i);
+        }
+        return answer + move;
+    }
+	
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42883
+	public String solution08(String number, int k) {
+		StringBuilder answer = new StringBuilder("");
+        int len = number.length() - k;
+        int start = 0;
+        
+        while(start < number.length() && answer.length() != len) {
+            int leftNum = k + answer.length() + 1;
+            int max = 0;
+            for (int j = start; j < leftNum; j++) {
+                if (max < number.charAt(j) - '0') {
+                    max = number.charAt(j) - '0';
+                    start = j + 1;
+                }
+            }
+            answer.append(Integer.toString(max));
+        }
+        return answer.toString();
+    }
+	
+	//@Link : https://programmers.co.kr/learn/courses/30/lessons/42885
+	public int solution09(int[] people, int limit) {
+		List<Integer> list = new ArrayList<>();
+        for(int x : people) list.add(x);
+        Collections.sort(list);
+        ArrayDeque<Integer> dq = new ArrayDeque<>(50505);
+        for(int x : list) dq.add(x);
+
+        int ans = 0;
+        while(dq.isEmpty() == false) {
+            int weight = dq.pollLast();
+            if(dq.isEmpty() == false && weight + dq.peekFirst() <= limit) { dq.pollFirst(); }
+            ans++;
+        }
+
+        return ans;
     }
 }
 
