@@ -30,82 +30,82 @@ class Card{
 
 public class module {
 	
-	public static void main(String[] args) {
-		
-		//문제풀이 기본 양식
-		Solution s = new Solution();
-		String[] answer = {};
-		
-
-		//String[] rooms= {"[403]James", "[404]Azad,Louis,Andy", "[101]Azad,Guard"};
-		//String[] rooms= {"[101]Azad,Guard", "[202]Guard", "[303]Guard,Dzaz"};
-		String[] rooms= {"[1234]None,Of,People,Here", "[5678]Wow"};
-		int target = 1234;
-		      
-//		System.out.println(s.solution11(new String[] {"I 16","D 1"}));
-//		System.out.println(s.solution11(new String[] {"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"}));
-		System.out.println(s.solution13(12,6));
-		
-//		answer = s.solution("JEROEN");
-//		System.out.println(" answer : " + answer);
-		
-		
-		//answer = s.solution(new String[]{"spy","ray","spy","room","once","ray","spy","once"} );
-//		answer = s.solution(new String[]{"spy","ray","spy","room","once","ray","spy","once", "room"} );
-//		System.out.println(" answer : " + answer);
-//		Arrays.stream(answer).forEach(t -> System.out.println(t));
+//	public static void main(String[] args) {
 //		
-//		int ans = 0;
-//		ans = s.solution00(new int[] {20,40,65,110}, 30);
-//		System.out.println(ans);
-		
-		//
-		
-		
-	
-			
-		//dfs, bfs
-//		Scanner sc = new Scanner(System.in);
-//		int n = sc.nextInt();
-//		int m = sc.nextInt();
-//		int start = sc.nextInt();
-//		a = (ArrayList<Integer>[]) new ArrayList[n+1];
-//		for (int i=1; i<=n; i++) {
-//		    a[i] = new ArrayList<Integer>();
-//		}
-//		for (int i=0; i<m; i++) {
-//		    int u = sc.nextInt();
-//		    int v = sc.nextInt();
-//		    a[u].add(v);
-//		    a[v].add(u);
-//		}
-//		for (int i=1; i<=n; i++) {
-//		    Collections.sort(a[i]);
-//		}
-//		c = new boolean[n+1];
-//		dfs(start);
-//		System.out.println();
-//		c = new boolean[n+1];
-//		bfs(start);
-//		System.out.println();
-//		Card card1 = new Card(6);
-//		Card card2 = new Card(1);
-//		Card card3 = new Card(2);
-//		Card card4 = new Card(3);
+//		//문제풀이 기본 양식
+//		Solution s = new Solution();
+//		String[] answer = {};
 //		
-//		System.out.println(Card.cnt);
+//
+//		//String[] rooms= {"[403]James", "[404]Azad,Louis,Andy", "[101]Azad,Guard"};
+//		//String[] rooms= {"[101]Azad,Guard", "[202]Guard", "[303]Guard,Dzaz"};
+//		String[] rooms= {"[1234]None,Of,People,Here", "[5678]Wow"};
+//		int target = 1234;
+//		      
+////		System.out.println(s.solution11(new String[] {"I 16","D 1"}));
+////		System.out.println(s.solution11(new String[] {"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"}));
+//		System.out.println(s.solution13(12,6));
 //		
-//		Person person = new Person();
-//		Person person2 = new Person();
+////		answer = s.solution("JEROEN");
+////		System.out.println(" answer : " + answer);
 //		
-//		person.eat();
-//		System.out.println(person.str12);
-//		person.str12 ="changed";
-//		System.out.println(person.str12);
-//		System.out.println(person2.str12);
-		
-		
-	}
+//		
+//		//answer = s.solution(new String[]{"spy","ray","spy","room","once","ray","spy","once"} );
+////		answer = s.solution(new String[]{"spy","ray","spy","room","once","ray","spy","once", "room"} );
+////		System.out.println(" answer : " + answer);
+////		Arrays.stream(answer).forEach(t -> System.out.println(t));
+////		
+////		int ans = 0;
+////		ans = s.solution00(new int[] {20,40,65,110}, 30);
+////		System.out.println(ans);
+//		
+//		//
+//		
+//		
+//	
+//			
+//		//dfs, bfs
+////		Scanner sc = new Scanner(System.in);
+////		int n = sc.nextInt();
+////		int m = sc.nextInt();
+////		int start = sc.nextInt();
+////		a = (ArrayList<Integer>[]) new ArrayList[n+1];
+////		for (int i=1; i<=n; i++) {
+////		    a[i] = new ArrayList<Integer>();
+////		}
+////		for (int i=0; i<m; i++) {
+////		    int u = sc.nextInt();
+////		    int v = sc.nextInt();
+////		    a[u].add(v);
+////		    a[v].add(u);
+////		}
+////		for (int i=1; i<=n; i++) {
+////		    Collections.sort(a[i]);
+////		}
+////		c = new boolean[n+1];
+////		dfs(start);
+////		System.out.println();
+////		c = new boolean[n+1];
+////		bfs(start);
+////		System.out.println();
+////		Card card1 = new Card(6);
+////		Card card2 = new Card(1);
+////		Card card3 = new Card(2);
+////		Card card4 = new Card(3);
+////		
+////		System.out.println(Card.cnt);
+////		
+////		Person person = new Person();
+////		Person person2 = new Person();
+////		
+////		person.eat();
+////		System.out.println(person.str12);
+////		person.str12 ="changed";
+////		System.out.println(person.str12);
+////		System.out.println(person2.str12);
+//		
+//		
+//	}
 	
 	
 	
